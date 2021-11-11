@@ -4,7 +4,8 @@
 import random
 
 # Prompting the player for their choice of rock, paper or scissors
-playerChoice = input('Would you like to play Rock, Paper or Scissors')
+print("Would you like to play rock, paper, or scissors?")
+playerChoice = input()
 # Debug line for print player choice
 # print (f"The player's choice is {playerChoice}")
 
