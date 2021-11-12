@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # A rock paper scissors bot to play lonely games with
 
 # Importing necessities
@@ -11,6 +13,23 @@ playerChoice = input()
 
 # Defining array of possible choices
 choices = ['rock','paper','scissors']
+strats = {
+    'rock': {
+        'scissors':'win',
+        'paper':'lose',
+        'rock':'draw'
+    },
+    'paper': {
+        'rock':'win',
+        'scissors':'lose',
+        'paper':'draw',
+    },
+    'scissors': {
+        'paper':'win',
+        'rock':'lose',
+        'scissors':'draw'
+    },
+}
 # Debug line for print choices array
 # print(f"The list named Choices is: {choices}")
 
@@ -21,22 +40,10 @@ botChoice = random.choice(choices)
 
 # Comparing bot choice to player choice
 if playerChoice in choices:
-    if botChoice != playerChoice:
-        if botChoice == 'rock':
-            if playerChoice == 'scissors':
-                print("Bot wins")
-            else:
-                print("Player wins")
-        elif botChoice == 'scissors':
-            if playerChoice == 'paper':
-                print("Bot wins")
-            else:
-                print("Player wins")
-        else:
-            if playerChoice == 'rock':
-                print("Bot wins")
-            else:
-                print("Player wins")
+    if strats[playerChoice][botChoice] == 'win':
+        print("Player wins")
+    elif strats[playerChoice][botChoice] == 'lose':
+        print("Bot wins")
     else:
         print("It's a draw")
 else:
