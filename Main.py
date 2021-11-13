@@ -8,11 +8,11 @@ import random
 # Prompting the player for their choice of rock, paper or scissors
 print("Would you like to play rock, paper, or scissors?")
 playerChoice = input()
-# Debug line for print player choice
-# print (f"The player's choice is {playerChoice}")
 
 # Defining array of possible choices
 choices = ['rock','paper','scissors']
+
+# Creating a dict full of all the possible matchups
 strats = {
     'rock': {
         'scissors':'win',
@@ -30,13 +30,9 @@ strats = {
         'scissors':'draw'
     },
 }
-# Debug line for print choices array
-# print(f"The list named Choices is: {choices}")
 
-# Random number generator for the bot's choice
+# Randomized choice selection for bot
 botChoice = random.choice(choices)
-# Debug line for print bot choice
-# print (f"The bot selected option is {botChoice}")
 
 # Comparing bot choice to player choice
 if playerChoice in choices:
